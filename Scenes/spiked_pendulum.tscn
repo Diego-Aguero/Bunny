@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlivs1odq8c6v"]
+
+[ext_resource type="Script" uid="uid://cyopabk7nd0p4" path="res://Scripts/spiked_pendulum.gd" id="1_fuu2u"]
+[ext_resource type="Script" uid="uid://btnaojeyvujsr" path="res://Scripts/spiked_pendulum_rigid.gd" id="2_esyoc"]
+[ext_resource type="Texture2D" uid="uid://bpbo5wu5gcuee" path="res://Assets/Tiles/Transparent/tile_0003.png" id="2_fuu2u"]
+[ext_resource type="Texture2D" uid="uid://bqrjewn62ksqk" path="res://Assets/Tiles/Transparent/tile_0004.png" id="3_esyoc"]
+[ext_resource type="Texture2D" uid="uid://bl0pe7srwuxnt" path="res://Assets/Tiles/Transparent/tile_0006.png" id="4_pa6vd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ehjp"]
+radius = 2.23607
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pm47i"]
+radius = 5.0
+
+[node name="SpikedPendulum" type="StaticBody2D"]
+script = ExtResource("1_fuu2u")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("..")
+node_b = NodePath("../SpikedPendulumRigid")
+metadata/_edit_lock_ = true
+
+[node name="SpikedPendulumRigid" type="RigidBody2D" parent="."]
+script = ExtResource("2_esyoc")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikedPendulumRigid"]
+position = Vector2(0, 44)
+shape = SubResource("CircleShape2D_5ehjp")
+
+[node name="Tile0003" type="Sprite2D" parent="SpikedPendulumRigid"]
+position = Vector2(0, 7)
+texture = ExtResource("2_fuu2u")
+metadata/_edit_group_ = true
+
+[node name="Tile0004" type="Sprite2D" parent="SpikedPendulumRigid"]
+position = Vector2(0, 24)
+texture = ExtResource("3_esyoc")
+metadata/_edit_group_ = true
+
+[node name="Tile0006" type="Sprite2D" parent="SpikedPendulumRigid"]
+position = Vector2(0, 41)
+texture = ExtResource("4_pa6vd")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="SpikedPendulumRigid" groups=["Hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikedPendulumRigid/Area2D"]
+position = Vector2(0, 44)
+shape = SubResource("CircleShape2D_pm47i")
+debug_color = Color(0.670588, 0, 0.0156863, 0.419608)

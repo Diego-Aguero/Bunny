@@ -1,0 +1,252 @@
+[gd_scene load_steps=17 format=3 uid="uid://1wm2xtsfhwdw"]
+
+[ext_resource type="Script" uid="uid://errtx3hkch7h" path="res://Scripts/player.gd" id="1_wgbu4"]
+[ext_resource type="Texture2D" uid="uid://cdjwene471dg4" path="res://Assets/Tiles/Transparent/tile_0265.png" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://33vchsy1g72n" path="res://Assets/Tiles/Ballon_State1.png" id="2_fkybt"]
+[ext_resource type="Texture2D" uid="uid://bothd6bllhdk5" path="res://Assets/Tiles/Ballon_State2.png" id="3_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://cy4goam7f4ovp" path="res://Assets/Tiles/Transparent/end_sprite.png" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://dw8tbjgw8n2d1" path="res://Assets/Player Skins/Bunny side animations4.png" id="5_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://ly0fkf1d4bq1" path="res://Assets/Player Skins/Bunny side animations1.png" id="6_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://c2tg28ihx3n4j" path="res://Assets/Player Skins/Bunny side animations2.png" id="7_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://xn14ogofyxi3" path="res://Assets/Player Skins/Bunny side animations3.png" id="9_gymyn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3smsa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fkybt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x3wgy")
+}],
+"loop": true,
+"name": &"Balloon",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_x3wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x3wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x3wgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x3wgy")
+}],
+"loop": false,
+"name": &"EndGameAnimation",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_f1ek2")
+}],
+"loop": false,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6t5aa")
+}],
+"loop": false,
+"name": &"Grab",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tx1dd")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x3wgy")
+}],
+"loop": false,
+"name": &"Land",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gymyn")
+}],
+"loop": false,
+"name": &"Peak",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs4t3"]
+size = Vector2(19, 31.000004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7vwh"]
+size = Vector2(12.5, 29.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(18.875, 4)
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrabArea/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HurtBoxPlayer/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "death"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 37.6991]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GrabArea/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HurtBoxPlayer/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkybt"]
+_data = {
+&"RESET": SubResource("Animation_vgqql"),
+&"death": SubResource("Animation_6t5aa")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+rotation = 6.28319
+collision_mask = 6
+platform_floor_layers = 4294967042
+platform_wall_layers = 2
+script = ExtResource("1_wgbu4")
+jump_force = 340
+max_speed = 220.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.0000849, -18.99999)
+sprite_frames = SubResource("SpriteFrames_3smsa")
+animation = &"Fall"
+autoplay = "Fall"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.0000803, -17.99999)
+shape = SubResource("RectangleShape2D_qs4t3")
+disabled = true
+
+[node name="HurtBoxPlayer" type="Area2D" parent="." groups=["HurtBoxPlayer"]]
+position = Vector2(-2.0000803, -17.999992)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxPlayer"]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_m7vwh")
+disabled = true
+debug_color = Color(0.738089, 0.72835, 0, 0.419608)
+
+[node name="GrabArea" type="Area2D" parent="." groups=["Grab"]]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea"]
+position = Vector2(-2.0001028, -23.999992)
+shape = SubResource("RectangleShape2D_cvnsp")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fkybt")
+}
+
+[node name="StartingTime" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="area_entered" from="HurtBoxPlayer" to="." method="_on_hurt_box_player_area_entered"]
+[connection signal="area_exited" from="HurtBoxPlayer" to="." method="_on_hurt_box_player_area_exited"]
+[connection signal="area_entered" from="GrabArea" to="." method="_on_grab_area_area_entered"]
+[connection signal="area_exited" from="GrabArea" to="." method="_on_grab_area_area_exited"]
+[connection signal="timeout" from="StartingTime" to="." method="_on_starting_time_timeout"]

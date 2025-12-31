@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjdtvk7qwf828"]
+
+[ext_resource type="Script" uid="uid://btfrfd1t2b4tg" path="res://Scripts/win_area.gd" id="1_m7b3t"]
+[ext_resource type="Texture2D" uid="uid://dnj67ijnvfktx" path="res://Assets/Tiles/Transparent/tile_0059.png" id="2_omxah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4qwb"]
+size = Vector2(32, 32)
+
+[node name="WinArea" type="Area2D"]
+script = ExtResource("1_m7b3t")
+siguiente_nivel = "2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g4qwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.364418e-07, -5.364418e-07)
+scale = Vector2(2, 1.9999999)
+texture = ExtResource("2_omxah")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

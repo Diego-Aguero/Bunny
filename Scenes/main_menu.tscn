@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://devml0q63da7a"]
+
+[ext_resource type="Script" uid="uid://x4pvg1tpqjle" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://bvqkbxayltml" path="res://Assets/UI/play_button.png" id="2_n45e2"]
+[ext_resource type="Texture2D" uid="uid://bw07maqhums3f" path="res://Assets/UI/options_button.png" id="3_opfnp"]
+[ext_resource type="Script" uid="uid://bmdth06egdo4i" path="res://Scripts/scene_buttons.gd" id="3_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://ckxvja88mitx2" path="res://Assets/UI/void_button.png" id="4_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://cv0lj5cikkmnx" path="res://Assets/UI/reload_button.png" id="5_yhxw7"]
+[ext_resource type="Script" uid="uid://bir7emh2nquwu" path="res://Scripts/exit_game.gd" id="7_cp0ys"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_28flt")
+radius = 100.0
+min_scale = 0.3
+max_scale = 2.0
+
+[node name="LevelsButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 0.16
+offset_bottom = 0.0699987
+texture_normal = ExtResource("2_n45e2")
+stretch_mode = 3
+script = ExtResource("3_yhxw7")
+scene_path = "res://Scenes/level_selector.tscn"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionsButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.059
+offset_right = 0.16
+offset_bottom = 0.0699987
+texture_normal = ExtResource("3_opfnp")
+stretch_mode = 3
+script = ExtResource("3_yhxw7")
+scene_path = "res://Scenes/options.tscn"
+
+[node name="SkinsButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.033
+anchor_bottom = 0.059
+offset_right = 0.16
+offset_bottom = 0.0699987
+texture_normal = ExtResource("4_cp0ys")
+stretch_mode = 3
+script = ExtResource("3_yhxw7")
+
+[node name="MarketButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.033
+anchor_bottom = 0.059
+offset_right = 0.16
+offset_bottom = 0.0699987
+texture_normal = ExtResource("4_cp0ys")
+stretch_mode = 3
+script = ExtResource("3_yhxw7")
+
+[node name="ExitGameButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.033
+anchor_bottom = 0.059
+offset_right = 0.16
+offset_bottom = 0.0699987
+texture_normal = ExtResource("5_yhxw7")
+stretch_mode = 3
+script = ExtResource("7_cp0ys")
+
+[connection signal="pressed" from="ExitGameButton" to="ExitGameButton" method="_on_pressed"]

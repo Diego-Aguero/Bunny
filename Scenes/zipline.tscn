@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjkprn3r54vs0"]
+
+[ext_resource type="Texture2D" uid="uid://b8gaq3pmquiug" path="res://Assets/Tiles/Transparent/tile_0231.png" id="1_h6mey"]
+[ext_resource type="Script" uid="uid://xf2tj8as2teu" path="res://Scripts/zipline.gd" id="1_ulrhc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulrhc"]
+size = Vector2(16, 2)
+
+[node name="Zipline" type="AnimatableBody2D"]
+script = ExtResource("1_ulrhc")
+
+[node name="Tile0231" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(1, 2)
+texture = ExtResource("1_h6mey")
+
+[node name="ZiplineArea" type="Area2D" parent="." groups=["Zipline"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZiplineArea"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ulrhc")
+debug_color = Color(0.615686, 0.537255, 0, 0.419608)

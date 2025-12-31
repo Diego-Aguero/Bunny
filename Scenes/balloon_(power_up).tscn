@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctypksbdbigyw"]
+
+[ext_resource type="Script" uid="uid://cysjv6nn4043s" path="res://Scripts/balloon_(power_up).gd" id="1_m7obj"]
+[ext_resource type="Texture2D" uid="uid://b84n2go5ogapn" path="res://Assets/Tiles/Transparent/Balloon.png" id="1_vdkl8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vdkl8"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7obj"]
+radius = 5.0636
+
+[node name="Balloon (PowerUp)" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_m7obj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_vdkl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vdkl8")
+
+[node name="BallonHurtbox" type="Area2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BallonHurtbox"]
+shape = SubResource("CircleShape2D_m7obj")
+debug_color = Color(0.701961, 0.701961, 0, 0.419608)

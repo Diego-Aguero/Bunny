@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://vlx25exmr5n3"]
+
+[ext_resource type="Texture2D" uid="uid://wcygddbiau4c" path="res://Assets/Tiles/Transparent/tile_0047.png" id="1_7jd7b"]
+[ext_resource type="Script" uid="uid://bxnx8of55jg4" path="res://Scripts/intermitent_platform.gd" id="1_vt4po"]
+[ext_resource type="Texture2D" uid="uid://blxj6cwup61st" path="res://Assets/Tiles/Transparent/tile_0067.png" id="2_vt4po"]
+[ext_resource type="Texture2D" uid="uid://dsnggnqglalt7" path="res://Assets/Tiles/Transparent/tile_0069.png" id="3_qrllr"]
+[ext_resource type="Texture2D" uid="uid://cedj3xomuipan" path="res://Assets/Tiles/Transparent/tile_0009.png" id="5_qrllr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6s5r"]
+size = Vector2(32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2yvn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7jd7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vt4po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qrllr")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qrllr")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vt4po"]
+size = Vector2(26, 26)
+
+[node name="IntermitentPlatform" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_vt4po")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x6s5r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_o2yvn")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.553985
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." groups=["Hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vt4po")
+debug_color = Color(0.672023, 0, 0.0147909, 0.419608)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

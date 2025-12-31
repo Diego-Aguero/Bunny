@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0u128qa8yqx7"]
+
+[ext_resource type="Script" uid="uid://dxbtjlqr332xa" path="res://Scripts/temporal_platform.gd" id="1_l5qpk"]
+[ext_resource type="Texture2D" uid="uid://d272wfcit3rqa" path="res://Assets/Tiles/Transparent/tile_0007.png" id="2_l5qpk"]
+[ext_resource type="Texture2D" uid="uid://dditirwfoankp" path="res://Assets/Tiles/Transparent/tile_0027.png" id="3_juxky"]
+[ext_resource type="Texture2D" uid="uid://b0xrt34dyidov" path="res://Assets/Tiles/Transparent/tile_0029.png" id="4_x6s5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6s5r"]
+size = Vector2(14, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2yvn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l5qpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_juxky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x6s5r")
+}],
+"loop": true,
+"name": &"Active",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l5qpk")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juxky"]
+size = Vector2(22.8571, 2.85715)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qpk"]
+size = Vector2(12.5, 12.5)
+
+[node name="TemporalPlatform" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("1_l5qpk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x6s5r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o2yvn")
+animation = &"Active"
+autoplay = "Idle"
+frame_progress = 0.789408
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1.13687e-13, -1)
+scale = Vector2(0.7, 0.7)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-9.79219e-07, -10)
+shape = SubResource("RectangleShape2D_juxky")
+debug_color = Color(0.615513, 0.536563, 0, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_l5qpk")
+debug_color = Color(0.672023, 0, 0.0147909, 0.419608)
+
+[node name="ReStartTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ReStartTimer" to="." method="_on_re_start_timer_timeout"]

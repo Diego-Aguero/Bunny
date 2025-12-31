@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhk4ttefj644j"]
+
+[ext_resource type="Script" uid="uid://dh83fgnrtccy6" path="res://Scripts/fan.gd" id="1_j6bxr"]
+[ext_resource type="Texture2D" uid="uid://bn1uucnoteg65" path="res://Assets/Tiles/Transparent/tile_0349.png" id="1_nfiji"]
+[ext_resource type="Texture2D" uid="uid://bt8uptvp2wj5y" path="res://Assets/Tiles/Transparent/tile_0350.png" id="2_j6bxr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp8gv"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eids2"]
+size = Vector2(85.75, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54c37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nfiji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j6bxr")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 14.0
+}]
+
+[node name="Fan" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_j6bxr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bp8gv")
+
+[node name="PushArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
+position = Vector2(45.125, 0)
+shape = SubResource("RectangleShape2D_eids2")
+debug_color = Color(0.615686, 0.537255, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_54c37")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.111989
+
+[connection signal="body_exited" from="PushArea" to="." method="_on_push_area_body_exited"]

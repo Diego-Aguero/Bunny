@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkerv3ve38jw6"]
+
+[ext_resource type="Script" uid="uid://cd62wxfssvqu6" path="res://Scripts/hud.gd" id="1_e0onf"]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_e0onf")
+
+[node name="FPSLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.367
+anchor_right = 0.45
+anchor_bottom = 0.085
+offset_left = 7.84
+offset_right = 7.99998
+offset_bottom = 0.0499992
+theme_override_font_sizes/font_size = 6
+text = "FPS: "
+
+[node name="DeathsLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.45
+anchor_right = 0.55
+anchor_bottom = 0.085
+offset_left = 7.99998
+offset_right = 8.0
+offset_bottom = 0.0499992
+theme_override_font_sizes/font_size = 6
+text = "Deaths:"
+
+[node name="TimeLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.55
+anchor_right = 0.633
+anchor_bottom = 0.089
+offset_left = 8.0
+offset_right = 8.16
+offset_bottom = -1.03
+theme_override_font_sizes/font_size = 6
+text = "Time: "
+
+[node name="Timer" type="Timer" parent="."]

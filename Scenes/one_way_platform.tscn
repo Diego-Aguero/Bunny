@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw3a3pfeeul2j"]
+
+[ext_resource type="Texture2D" uid="uid://535xqd3ffxxg" path="res://Assets/Tiles/Transparent/tile_0168.png" id="1_pcsaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlv5y"]
+size = Vector2(16, 3)
+
+[node name="OneWayPlatform" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Tile0168" type="Sprite2D" parent="."]
+texture = ExtResource("1_pcsaq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_xlv5y")
+one_way_collision = true

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsc0bliiin744"]
+
+[ext_resource type="Script" uid="uid://bpqb1wu407yff" path="res://Scripts/circular_saw.gd" id="1_tqk5q"]
+[ext_resource type="Texture2D" uid="uid://ds74q016lekyo" path="res://Assets/Tiles/circular_saw2.png" id="1_xack3"]
+[ext_resource type="Texture2D" uid="uid://svjq7w1ythvj" path="res://Assets/Tiles/circular_saw1.png" id="2_tqk5q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_stu5q"]
+radius = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cde4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xack3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tqk5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86tsg"]
+radius = 12.0
+
+[node name="CircularSaw" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_tqk5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_stu5q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.4305115e-06, -1.4305115e-06)
+scale = Vector2(1.4999999, 1.4999999)
+sprite_frames = SubResource("SpriteFrames_cde4n")
+autoplay = "default"
+frame_progress = 0.0382667
+
+[node name="Area2D" type="Area2D" parent="." groups=["Hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_86tsg")
+debug_color = Color(0.670588, 0, 0.0156863, 0.419608)

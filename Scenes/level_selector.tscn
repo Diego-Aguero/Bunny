@@ -1,0 +1,190 @@
+[gd_scene load_steps=3 format=3 uid="uid://du8dmgqfbwveb"]
+
+[ext_resource type="Script" uid="uid://bgsm3hyx2a1ry" path="res://Scripts/level_selector.gd" id="1_x3xpc"]
+[ext_resource type="PackedScene" uid="uid://bpxxhcah2wps2" path="res://Scenes/level_button.tscn" id="2_x3xpc"]
+
+[node name="LevelSelector" type="CanvasLayer"]
+script = ExtResource("1_x3xpc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.267
+anchor_right = 0.654
+anchor_bottom = 0.681
+offset_left = -1.52588e-05
+offset_top = -0.090004
+offset_right = 0.0799866
+offset_bottom = 0.12999
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="LevelButton" parent="Control/HBoxContainer/HBoxContainer" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_1.tscn"
+level_number = "1"
+
+[node name="LevelButton2" parent="Control/HBoxContainer/HBoxContainer" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_2.tscn"
+level_number = "2"
+
+[node name="LevelButton3" parent="Control/HBoxContainer/HBoxContainer" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_3.tscn"
+level_number = "3"
+
+[node name="LevelButton4" parent="Control/HBoxContainer/HBoxContainer" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_4.tscn"
+level_number = "4"
+
+[node name="LevelButton5" parent="Control/HBoxContainer/HBoxContainer" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_5.tscn"
+level_number = "5"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="LevelButton" parent="Control/HBoxContainer/HBoxContainer2" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_6.tscn"
+level_number = "6"
+
+[node name="LevelButton2" parent="Control/HBoxContainer/HBoxContainer2" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_7.tscn"
+level_number = "7"
+
+[node name="LevelButton3" parent="Control/HBoxContainer/HBoxContainer2" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_8.tscn"
+level_number = "8"
+
+[node name="LevelButton4" parent="Control/HBoxContainer/HBoxContainer2" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_9.tscn"
+level_number = "9"
+
+[node name="LevelButton5" parent="Control/HBoxContainer/HBoxContainer2" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_10.tscn"
+level_number = "10"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="LevelButton" parent="Control/HBoxContainer/HBoxContainer3" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_11.tscn"
+level_number = "11"
+
+[node name="LevelButton2" parent="Control/HBoxContainer/HBoxContainer3" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_12.tscn"
+level_number = "12"
+
+[node name="LevelButton3" parent="Control/HBoxContainer/HBoxContainer3" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_13.tscn"
+level_number = "13"
+
+[node name="LevelButton4" parent="Control/HBoxContainer/HBoxContainer3" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_14.tscn"
+level_number = "14"
+
+[node name="LevelButton5" parent="Control/HBoxContainer/HBoxContainer3" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_15.tscn"
+level_number = "15"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="LevelButton" parent="Control/HBoxContainer/HBoxContainer4" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_16.tscn"
+level_number = "16"
+
+[node name="LevelButton2" parent="Control/HBoxContainer/HBoxContainer4" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_17.tscn"
+level_number = "17"
+
+[node name="LevelButton3" parent="Control/HBoxContainer/HBoxContainer4" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_18.tscn"
+level_number = "18"
+
+[node name="LevelButton4" parent="Control/HBoxContainer/HBoxContainer4" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_19.tscn"
+level_number = "19"
+
+[node name="LevelButton5" parent="Control/HBoxContainer/HBoxContainer4" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_20.tscn"
+level_number = "20"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="LevelButton" parent="Control/HBoxContainer/HBoxContainer5" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_21.tscn"
+level_number = "21"
+
+[node name="LevelButton2" parent="Control/HBoxContainer/HBoxContainer5" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_22.tscn"
+level_number = "22"
+
+[node name="LevelButton3" parent="Control/HBoxContainer/HBoxContainer5" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_23.tscn"
+level_number = "23"
+
+[node name="LevelButton4" parent="Control/HBoxContainer/HBoxContainer5" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_24.tscn"
+level_number = "24"
+
+[node name="LevelButton5" parent="Control/HBoxContainer/HBoxContainer5" instance=ExtResource("2_x3xpc")]
+layout_mode = 2
+level_scene_path = "res://Scenes/Levels/level_25.tscn"
+level_number = "25"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.387
+anchor_top = 0.089
+anchor_right = 0.61
+anchor_bottom = 0.178
+offset_left = 0.23999
+offset_top = -0.0300007
+offset_right = 0.199982
+offset_bottom = -1.06
+text = "Level Selector"

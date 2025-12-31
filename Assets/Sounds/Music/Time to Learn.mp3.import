@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcxii5q2db5w7"
+path="res://.godot/imported/Time to Learn.mp3-1439e912ea7d1cb3799e5dd2ae95ecd7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Time to Learn.mp3"
+dest_files=["res://.godot/imported/Time to Learn.mp3-1439e912ea7d1cb3799e5dd2ae95ecd7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

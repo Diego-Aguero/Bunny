@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dltsxs3y2n4w1"]
+
+[ext_resource type="Texture2D" uid="uid://dc5hbrmtd004g" path="res://Assets/Tiles/Transparent/tile_0183.png" id="1_8jkev"]
+[ext_resource type="Script" uid="uid://co6ml1uh0244e" path="res://Scripts/time_spikes.gd" id="1_daq1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daq1p"]
+size = Vector2(6.5, 15)
+
+[node name="TimeSpike" type="Node2D"]
+script = ExtResource("1_daq1p")
+raise_amount = 30.0
+raise_speed = 200.0
+CicleTime = 0.9
+
+[node name="Tile0183" type="Sprite2D" parent="."]
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(2, 2)
+texture = ExtResource("1_8jkev")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_daq1p")
+debug_color = Color(0.672023, 0, 0.0147909, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8, 8)
+shape = SubResource("RectangleShape2D_daq1p")
+debug_color = Color(0.670588, 0, 0.0156863, 0.419608)
+
+[node name="StandTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="StandTimer" to="." method="_on_stand_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

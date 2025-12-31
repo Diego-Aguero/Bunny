@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b05t8mwgm04gi"]
+
+[ext_resource type="Script" uid="uid://ccd4xw1y3p6vq" path="res://Scripts/movile_platform.gd" id="1_4e2ol"]
+[ext_resource type="Texture2D" uid="uid://bpafew02ma8hy" path="res://Assets/Tiles/Transparent/tile_0008.png" id="1_fasn6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e2ol"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56xsd"]
+size = Vector2(27, 27)
+
+[node name="MovilePlatform" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_4e2ol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4e2ol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(2, 2)
+texture = ExtResource("1_fasn6")
+
+[node name="Area2D4" type="Area2D" parent="." groups=["Hazard"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_56xsd")
+debug_color = Color(0.672023, 0, 0.0147909, 0.419608)

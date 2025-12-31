@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi0k2ev3ndhxm"]
+
+[ext_resource type="Texture2D" uid="uid://20gxrwclsou3" path="res://Assets/Tiles/Transparent/tile_0325.png" id="1_7jfcb"]
+[ext_resource type="Script" uid="uid://cfpfkchlq11lh" path="res://Scripts/gravity_zone.gd" id="1_gk7cm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk7cm"]
+size = Vector2(2, 16)
+
+[node name="GravityZone" type="Area2D" groups=["GravityZone"]]
+script = ExtResource("1_gk7cm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gk7cm")
+debug_color = Color(0.615686, 0.537255, 0, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7jfcb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

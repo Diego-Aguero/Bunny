@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctuwkd7cn7wir"]
+
+[ext_resource type="Script" uid="uid://cm8xo84ym6h0b" path="res://Scripts/in_out_transition.gd" id="1_dco3k"]
+[ext_resource type="Shader" uid="uid://dkfs4qw510g74" path="res://Scripts/Shaders/death_transition.gdshader" id="2_0k121"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14up8"]
+shader = ExtResource("2_0k121")
+shader_parameter/screen_width = 100.0
+shader_parameter/screen_height = 50.0
+shader_parameter/circle_size = 1.15
+shader_parameter/feather = 0.0
+shader_parameter/circle_position = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_lhm7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.15]
+}
+
+[sub_resource type="Animation" id="Animation_w3wbk"]
+resource_name = "ease_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.15]
+}
+
+[sub_resource type="Animation" id="Animation_b224u"]
+resource_name = "ease_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.15, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dco3k"]
+resource_name = "prueba"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect:material:shader_parameter/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.141703, 0.266733, 0.533333, 0.800033, 1.20833, 1.40003),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.06, 0.06, 0.04, 0.04, 1.15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ubu23"]
+_data = {
+&"RESET": SubResource("Animation_lhm7x"),
+&"ease_in": SubResource("Animation_w3wbk"),
+&"ease_out": SubResource("Animation_b224u"),
+&"prueba": SubResource("Animation_dco3k")
+}
+
+[node name="InOutTransition" type="CanvasLayer" groups=["Transition"]]
+script = ExtResource("1_dco3k")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_14up8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ubu23")
+}

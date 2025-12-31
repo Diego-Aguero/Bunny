@@ -1,0 +1,68 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Bunny"
+config/tags=PackedStringArray("prototipo")
+run/main_scene="uid://cps1u65vnf233"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/image="uid://bc6wfypd7cgeu"
+config/icon="res://icon.svg"
+
+[autoload]
+
+GLOBAL="*res://Scripts/AutoLoads/global.gd"
+GameManager="*res://Scripts/AutoLoads/game_manager.gd"
+MusicManager="*res://Scenes/music_manager.tscn"
+Hud="*res://Scenes/hud.tscn"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=2
+window/stretch/mode="viewport"
+window/emulate_mouse_from_touch=false
+window/emulate_touch_from_mouse=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+
+[global_group]
+
+Hazard=""
+EndJumpRight=""
+EndJumpLeft=""
+Sticky=""
+Grab=""
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
+
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_render/layer_2="World"
+2d_render/layer_3="Objects"
+2d_physics/layer_1="Player"
+2d_physics/layer_2="World"
+2d_physics/layer_3="Objects"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

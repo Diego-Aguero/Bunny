@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://k0ju6bjyu307"]
+
+[ext_resource type="Script" uid="uid://cj0304dgg3j0f" path="res://Scripts/balloon_(item).gd" id="1_mcpeq"]
+[ext_resource type="Texture2D" uid="uid://i5t70tqceayl" path="res://Assets/Tiles/Transparent/Balloon_item.png" id="2_mcpeq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mcpeq"]
+radius = 7.07107
+
+[node name="Balloon (Item)" type="Node2D"]
+light_mask = 0
+script = ExtResource("1_mcpeq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.5, 0)
+texture = ExtResource("2_mcpeq")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Balloon"]]
+position = Vector2(0, -0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.2)
+shape = SubResource("CircleShape2D_mcpeq")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
