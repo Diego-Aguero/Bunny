@@ -12,7 +12,7 @@ var trampoline_boost: bool = false
 @export var fan_max_speed_y: float = 800.0
 @export var fan_friction: float = 0.9
 @export var has_balloon: bool = false
-@export var max_fall_speed_with_balloon: float = 90.0
+@export var max_fall_speed_with_balloon: float = 70.0
 @export var player_direction: Vector2
 
 var is_in_vertical_fan: bool = false
@@ -67,6 +67,7 @@ func _physics_process(delta):
 	fan_push.x = clamp(fan_push.x * fan_friction, -fan_max_speed_x, fan_max_speed_x)
 	fan_push.y = clamp(fan_push.y * fan_friction, -fan_max_speed_y, fan_max_speed_y)
 
+	# Lógica para suelos normales (Bloques sólidos)
 	if (current_gravity_direction > 0 and is_on_floor()) or (current_gravity_direction < 0 and is_on_ceiling()):
 		trampoline_boost = false
 
@@ -85,25 +86,16 @@ func update_animations():
 		_change_anim("Balloon")
 		return
 	
-	# Lógica de Salto y Gravedad
-	# Normaliza la velocidad vertical según la dirección de la gravedad.
-	# Si relative_vy es negativo, esta yendocontra la gravedad.
-	# Si relative_vy es positivo, esta cayendo a favor de la gravedad.
 	var relative_vy = velocity.y * current_gravity_direction
-	
-	# Detectamos si está tocando suelo/techo (según gravedad)
 	var is_grounded = (current_gravity_direction > 0 and is_on_floor()) or (current_gravity_direction < 0 and is_on_ceiling())
 
 	if is_grounded:
-		_change_anim("Jump") #Dependiendo el personaje o la skin este frame puede ser el mismo que el de saltar ya que al impulsarse instantaneamente no se notaría.
+		_change_anim("Jump") 
 	elif relative_vy < -50: 
-		# Velocidad fuerte hacia arriba
 		_change_anim("Jump")
 	elif relative_vy > 50:
-		# Velocidad fuerte hacia abajo (cayendo)
 		_change_anim("Fall")
 	else:
-		# Velocidad cercana a 0 (el punto máximo del salto)
 		_change_anim("Peak")
 
 func _change_anim(name_anim: String) -> void:
@@ -154,18 +146,25 @@ func auto_jump():
 		if (current_gravity_direction > 0 and is_on_floor()) or (current_gravity_direction < 0 and is_on_ceiling()):
 			velocity.y = -jump_force * current_gravity_direction
 			
-			# Crea un efecto de estiramiento suave al saltar
 			var tween = create_tween()
-			# Se estira en Y (1.2) y se adelgaza en X (0.8) muy rápido (0.1s)
 			tween.tween_property(animated_sprite, "scale", Vector2(0.8, 1.3), 0.12)
-			# Vuelve a la normalidad
 			tween.tween_property(animated_sprite, "scale", Vector2(1.0, 1.0), 0.3)
 
 func set_fan_zone_state(state: bool) -> void:
 	is_in_vertical_fan = state
 
+# --- CAMBIO PRINCIPAL AQUÍ ---
 func set_trampoline_boost(boost: bool) -> void:
 	trampoline_boost = boost
+	
+	# Si recibimos un impulso de trampolín (boost es true), 
+	# cuenta como tocar suelo, así que reventamos el globo inmediatamente.
+	if boost and has_balloon:
+		has_balloon = false
+		if is_instance_valid(balloon_item_ref):
+			balloon_item_ref.reactivate()
+		balloon_item_ref = null
+# -----------------------------
 
 func _on_grab_area_area_entered(area):
 	if area.is_in_group("Zipline"):

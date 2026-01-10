@@ -21,28 +21,50 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MainText" type="Label" parent="."]
-layout_mode = 2
-offset_left = 148.0
-offset_top = 96.0
-offset_right = 321.0
-offset_bottom = 127.0
-theme_override_font_sizes/font_size = 22
-text = "End of the alpha"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32700002
+anchor_top = 0.379
+anchor_right = 0.67300004
+anchor_bottom = 0.48900002
+offset_left = 24.219986
+offset_top = 11.059998
+offset_right = -24.220032
+offset_bottom = 36.45999
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "End of the Beta
+"
 
 [node name="SubText" type="Label" parent="."]
-layout_mode = 2
-offset_left = 199.0
-offset_top = 126.0
-offset_right = 279.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 8
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42800003
+anchor_top = 0.497
+anchor_right = 0.572
+anchor_bottom = 0.54200006
+offset_left = 0.07998657
+offset_top = 0.08000183
+offset_right = -0.08001709
+offset_bottom = -0.120025635
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
 text = "Thanks for playing!"
 
 [node name="ExitButton" type="Button" parent="."]
-layout_mode = 2
-offset_left = 177.0
-offset_top = 147.0
-offset_right = 297.0
-offset_bottom = 175.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40600002
+anchor_top = 0.56700003
+anchor_right = 0.59400004
+anchor_bottom = 0.64400005
+offset_left = 0.15997314
+offset_top = -0.120010376
+offset_right = -0.16003418
+offset_bottom = 0.15997314
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 14
 text = "Exit"

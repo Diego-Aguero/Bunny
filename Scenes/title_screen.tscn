@@ -79,28 +79,32 @@ color = Color(0, 0, 0, 1)
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.383
-anchor_top = 0.533
-anchor_right = 0.567
-anchor_bottom = 0.593
-offset_left = 8.16
-offset_top = 0.0899963
-offset_right = 7.84003
-offset_bottom = -0.110001
-theme_override_font_sizes/font_size = 7
+anchor_left = 0.38700002
+anchor_top = 0.55600005
+anchor_right = 0.61200005
+anchor_bottom = 0.60300004
+offset_left = 0.3199768
+offset_top = -0.16001892
+offset_right = 0.3199768
+offset_bottom = -0.08001709
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
 text = "press any button to start"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.415
-anchor_right = 0.696
-anchor_bottom = 0.533
-offset_top = -0.0500031
-offset_right = -0.0800171
-offset_bottom = 0.0899811
-theme_override_font_sizes/font_size = 23
+anchor_left = 0.275
+anchor_top = 0.42200002
+anchor_right = 0.712
+anchor_bottom = 0.55300003
+offset_top = 0.07998657
+offset_right = 1.3200073
+offset_bottom = -0.08001709
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
 text = "Title of the Game"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -108,3 +112,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_4gxqj")
 }
 autoplay = "Idle"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -312.0
+offset_top = 156.0
+offset_right = -168.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Beta v0.9"
