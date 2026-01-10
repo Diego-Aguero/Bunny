@@ -4,14 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://i5t70tqceayl" path="res://Assets/Tiles/Transparent/Balloon_item.png" id="2_mcpeq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mcpeq"]
-radius = 7.07107
+radius = 16.0
 
 [node name="Balloon (Item)" type="Node2D"]
 light_mask = 0
 script = ExtResource("1_mcpeq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(4.7683716e-07, 9.536743e-07)
+scale = Vector2(1.9999999, 1.9999999)
 texture = ExtResource("2_mcpeq")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Balloon"]]

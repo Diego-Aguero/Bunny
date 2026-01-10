@@ -22,8 +22,8 @@ enum CrusherDirection { UP, DOWN }
 
 @export_group("Configuración de Shake")
 @export var anticipation_time: float = 0.5  # Tiempo que dura la vibración
-@export var shake_intensity: float = 5.0    # Grados de rotación (Ej: 5 grados)
-@export var shake_speed: float = 0.05       # Velocidad de cada "sacudida" (Menor = más rápido)
+@export var shake_intensity: float = 5.0    # Grados de rotación
+@export var shake_speed: float = 0.05       # Velocidad de cada sacudida (Menor = más rápido)
 
 @export_group("Configuración de Areas")
 @export var left_area_size: Vector2 = Vector2(32, 64):

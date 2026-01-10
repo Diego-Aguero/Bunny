@@ -8,8 +8,8 @@ var trampoline_boost: bool = false
 @export var acceleration: float = 10.0
 @export var deceleration: float = 20.0
 
-@export var fan_max_speed_x: float = 300.0
-@export var fan_max_speed_y: float = 400.0
+@export var fan_max_speed_x: float = 600.0
+@export var fan_max_speed_y: float = 800.0
 @export var fan_friction: float = 0.9
 @export var has_balloon: bool = false
 @export var max_fall_speed_with_balloon: float = 90.0
@@ -116,7 +116,6 @@ func apply_gravity(delta):
 		return
 	var final_gravity = gravity
 	var fall_velocity = velocity.y + final_gravity * current_gravity_direction * delta
-	fall_velocity += fan_push.y
 
 	if has_balloon and is_in_vertical_fan:
 		var lift_force : float = -400.0 * delta * current_gravity_direction

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ocleegdn7x3u" path="res://Scripts/end_area.gd" id="1_m7fxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7fxb"]
-size = Vector2(20, 5)
+size = Vector2(20, 8)
 
 [node name="EndArea" type="Area2D" groups=["EndGameArea"]]
 position = Vector2(8, -8)
@@ -16,7 +16,7 @@ wait_time = 7.0
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2.5)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_m7fxb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

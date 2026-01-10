@@ -1,9 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://1wm2xtsfhwdw"]
+[gd_scene load_steps=13 format=3 uid="uid://1wm2xtsfhwdw"]
 
 [ext_resource type="Script" uid="uid://errtx3hkch7h" path="res://Scripts/player.gd" id="1_wgbu4"]
-[ext_resource type="Texture2D" uid="uid://cdjwene471dg4" path="res://Assets/Tiles/Transparent/tile_0265.png" id="2_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://33vchsy1g72n" path="res://Assets/Tiles/Ballon_State1.png" id="2_fkybt"]
-[ext_resource type="Texture2D" uid="uid://bothd6bllhdk5" path="res://Assets/Tiles/Ballon_State2.png" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://cy4goam7f4ovp" path="res://Assets/Tiles/Transparent/end_sprite.png" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dw8tbjgw8n2d1" path="res://Assets/Player Skins/Bunny side animations4.png" id="5_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://ly0fkf1d4bq1" path="res://Assets/Player Skins/Bunny side animations1.png" id="6_x3wgy"]
@@ -14,10 +11,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_fkybt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_x3wgy")
+"texture": ExtResource("5_f1ek2")
 }],
 "loop": true,
 "name": &"Balloon",
@@ -50,7 +44,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6t5aa")
+"texture": ExtResource("7_tx1dd")
 }],
 "loop": false,
 "name": &"Grab",
