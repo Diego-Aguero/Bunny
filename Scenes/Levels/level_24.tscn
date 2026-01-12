@@ -526,6 +526,7 @@ rotation = 3.14159
 
 [node name="Checkpoint2" parent="." instance=ExtResource("4_7mwmm")]
 position = Vector2(400, 496)
+checkpoint_id = 1
 
 [node name="Spike110" parent="." instance=ExtResource("11_wk0iw")]
 position = Vector2(16, 368)

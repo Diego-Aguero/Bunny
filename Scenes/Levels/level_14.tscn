@@ -176,3 +176,7 @@ cooldown_time = 0.8
 
 [node name="Spring2" parent="." instance=ExtResource("9_4lcd7")]
 position = Vector2(16, 400)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("4_4lcd7")]
+position = Vector2(560, 352)
+checkpoint_id = 1

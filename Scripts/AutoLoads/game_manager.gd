@@ -6,6 +6,8 @@ var is_on_dead_transition: bool = false
 var is_level_complete: bool  = false
 var death_count: int = 0
 var elapsed_time: float = 0.0
+var last_checkpoint_position: Vector2 = Vector2.ZERO
+var current_checkpoint_id: int = -1 # -1 significa "ninguno activado aún"
 
 func _process(delta):
 	elapsed_time += delta
@@ -17,13 +19,14 @@ func reset_stats():
 	death_count = 0
 	elapsed_time = 0.0
 
-var last_checkpoint_position: Vector2 = Vector2.ZERO
+
+func clear_checkpoint():
+	last_checkpoint_position = Vector2.ZERO
+	is_level_complete = false
+	current_checkpoint_id = -1
+	print("Datos de checkpoint purgados para el nuevo nivel")
 
 func reset_scene() -> void:
 	is_dead = false 
 	get_tree().reload_current_scene()
 	print("Escena reseteada. Checkpoint actual: ", last_checkpoint_position)
-
-func clear_checkpoint():
-	last_checkpoint_position = Vector2.ZERO
-	is_level_complete = false

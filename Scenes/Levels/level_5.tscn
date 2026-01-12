@@ -687,6 +687,7 @@ position = Vector2(1392, 240)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("4_0fyhm")]
 position = Vector2(592, 304)
+checkpoint_id = 1
 
 [node name="Spike56" parent="." instance=ExtResource("8_doouk")]
 position = Vector2(1360, 16)
@@ -697,3 +698,7 @@ position = Vector2(1264, 80)
 [node name="Spike57" parent="." instance=ExtResource("8_doouk")]
 position = Vector2(1456, 144)
 rotation = 3.1415927
+
+[node name="Checkpoint3" parent="." instance=ExtResource("4_0fyhm")]
+position = Vector2(1648, 80)
+checkpoint_id = 2

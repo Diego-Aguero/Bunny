@@ -194,6 +194,7 @@ position = Vector2(304, 240)
 
 [node name="Checkpoint3" parent="." instance=ExtResource("4_cjb10")]
 position = Vector2(624, 240)
+checkpoint_id = 1
 
 [node name="TimeSpike16" parent="." instance=ExtResource("8_5l77v")]
 position = Vector2(80, 272)

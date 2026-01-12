@@ -214,6 +214,7 @@ position = Vector2(368, 496)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("4_ctkoa")]
 position = Vector2(400, 304)
+checkpoint_id = 1
 
 [node name="Crusher" parent="." instance=ExtResource("8_604da")]
 position = Vector2(48, 304)
