@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ujs8i0jfv03k"]
+
+[ext_resource type="Script" uid="uid://dvsuppt2l67k1" path="res://Scripts/trigger_cam.gd" id="1_hl3q5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y78qj"]
+
+[node name="TriggerCam" type="Area2D"]
+script = ExtResource("1_hl3q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y78qj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

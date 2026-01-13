@@ -14,6 +14,7 @@ var trampoline_boost: bool = false
 @export var has_balloon: bool = false
 @export var max_fall_speed_with_balloon: float = 70.0
 @export var player_direction: Vector2
+@onready var pcam = $PhantomCamera2D
 
 var is_in_vertical_fan: bool = false
 var balloon_item_ref: Node2D = null
@@ -215,6 +216,15 @@ func _on_starting_time_timeout():
 func death_ctrl():
 	if is_dead: 
 		return
+	if pcam:
+			var main_camera = get_tree().get_first_node_in_group("MainCamera")
+			var freeze_pos = pcam.global_position # Backup por si acaso
+			if main_camera:
+				freeze_pos = main_camera.global_position
+			pcam.reparent(get_tree().current_scene)
+			pcam.global_position = freeze_pos
+			pcam.follow_mode = 0 # NONE
+			pcam.follow_damping = false
 	is_dead = true
 	GameManager.is_dead = true
 	GameManager.add_death()

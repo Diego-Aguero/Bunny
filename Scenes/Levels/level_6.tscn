@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://bh2i0o3mrev2u"]
+[gd_scene load_steps=19 format=4 uid="uid://bh2i0o3mrev2u"]
 
 [ext_resource type="PackedScene" uid="uid://cjdtvk7qwf828" path="res://Scenes/win_area.tscn" id="3_6y1v7"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_2khew"]
 [ext_resource type="PackedScene" uid="uid://dfdvlqbo4s7tp" path="res://Scenes/checkpoint.tscn" id="4_cjb10"]
 [ext_resource type="PackedScene" uid="uid://1wm2xtsfhwdw" path="res://Scenes/player.tscn" id="5_bt86y"]
 [ext_resource type="PackedScene" uid="uid://bt5e87uu1gc8b" path="res://Scenes/camera_2d.tscn" id="6_00o8d"]
@@ -10,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://cr6iy6xckbe0e" path="res://Assets/Tilemap/TilesetWorld2.png" id="10_00o8d"]
 [ext_resource type="PackedScene" uid="uid://bm4pahtbsycrp" path="res://Scenes/spike.tscn" id="10_bt86y"]
 [ext_resource type="Texture2D" uid="uid://di3kqx6iqp7sv" path="res://Assets/Tilemap/TilesetWorld1(Outline).png" id="11_2khew"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="12_xab48"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_qoxtb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xab48"]
 texture = ExtResource("10_00o8d")
@@ -128,6 +131,9 @@ texture = ExtResource("11_2khew")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_b574l")
 
+[sub_resource type="Resource" id="Resource_a2hlh"]
+script = ExtResource("13_qoxtb")
+
 [node name="Level6" type="Node2D"]
 
 [node name="WinArea" parent="." instance=ExtResource("3_6y1v7")]
@@ -138,6 +144,15 @@ siguiente_nivel = "7"
 position = Vector2(24, 504)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_00o8d")]
+physics_interpolation_mode = 1
+position = Vector2(24, 504)
+position_smoothing_enabled = false
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_2khew")
 
 [node name="TimeSpike" parent="." instance=ExtResource("8_5l77v")]
 position = Vector2(336, 528)
@@ -233,3 +248,15 @@ tile_set = SubResource("TileSet_k2mii")
 
 [node name="Player" parent="." instance=ExtResource("5_bt86y")]
 position = Vector2(24, 504)
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(24, 504)
+script = ExtResource("12_xab48")
+priority = 10
+follow_mode = 2
+follow_target = NodePath("../Player")
+snap_to_pixel = true
+tween_resource = SubResource("Resource_a2hlh")
+follow_damping = true
+draw_limits = true

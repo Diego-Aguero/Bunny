@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://1wm2xtsfhwdw"]
+[gd_scene load_steps=16 format=3 uid="uid://1wm2xtsfhwdw"]
 
 [ext_resource type="Script" uid="uid://errtx3hkch7h" path="res://Scripts/player.gd" id="1_wgbu4"]
 [ext_resource type="Texture2D" uid="uid://cy4goam7f4ovp" path="res://Assets/Tiles/Transparent/end_sprite.png" id="4_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://dw8tbjgw8n2d1" path="res://Assets/Player Skins/Bunny side animations4.png" id="5_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://ly0fkf1d4bq1" path="res://Assets/Player Skins/Bunny side animations1.png" id="6_x3wgy"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="7_8erm5"]
 [ext_resource type="Texture2D" uid="uid://c2tg28ihx3n4j" path="res://Assets/Player Skins/Bunny side animations2.png" id="7_tx1dd"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://xn14ogofyxi3" path="res://Assets/Player Skins/Bunny side animations3.png" id="9_gymyn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3smsa"]
@@ -178,6 +180,9 @@ _data = {
 &"death": SubResource("Animation_6t5aa")
 }
 
+[sub_resource type="Resource" id="Resource_tx1dd"]
+script = ExtResource("8_f1ek2")
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 rotation = 6.28319
 collision_mask = 6
@@ -224,6 +229,22 @@ libraries = {
 [node name="StartingTime" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+top_level = true
+script = ExtResource("7_8erm5")
+priority = 10
+follow_mode = 2
+follow_target = NodePath("..")
+snap_to_pixel = true
+tween_resource = SubResource("Resource_tx1dd")
+tween_on_load = false
+follow_damping = true
+dead_zone_width = 0.15
+dead_zone_height = 0.3
+show_viewfinder_in_play = true
+draw_limits = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [connection signal="area_entered" from="HurtBoxPlayer" to="." method="_on_hurt_box_player_area_entered"]
 [connection signal="area_exited" from="HurtBoxPlayer" to="." method="_on_hurt_box_player_area_exited"]

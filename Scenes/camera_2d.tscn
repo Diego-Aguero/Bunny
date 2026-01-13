@@ -1,16 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt5e87uu1gc8b"]
+[gd_scene load_steps=3 format=3 uid="uid://bt5e87uu1gc8b"]
 
 [ext_resource type="Script" uid="uid://dpjkl8b02brrx" path="res://Scripts/camera.gd" id="1_omgnx"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_ev1no"]
 
 [node name="Camera2D" type="Camera2D" groups=["MainCamera"]]
 limit_smoothed = true
-position_smoothing_enabled = true
 position_smoothing_speed = 20.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.15
-drag_top_margin = 0.25
-drag_right_margin = 0.15
-drag_bottom_margin = 0.1
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+editor_draw_limits = true
 editor_draw_drag_margin = true
 script = ExtResource("1_omgnx")
+
+[node name="PhantomCameraHost" type="Node" parent="."]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_ev1no")
