@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dgs2uiavfliac"]
+[gd_scene load_steps=18 format=4 uid="uid://dgs2uiavfliac"]
 
 [ext_resource type="PackedScene" uid="uid://cjdtvk7qwf828" path="res://Scenes/win_area.tscn" id="3_keyqw"]
 [ext_resource type="PackedScene" uid="uid://dfdvlqbo4s7tp" path="res://Scenes/checkpoint.tscn" id="4_gsxik"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://x35o28qloulg" path="res://Assets/Tilemap/TilesetWorld1.png" id="8_keyqw"]
 [ext_resource type="Texture2D" uid="uid://di3kqx6iqp7sv" path="res://Assets/Tilemap/TilesetWorld1(Outline).png" id="9_gsxik"]
 [ext_resource type="PackedScene" uid="uid://bm4pahtbsycrp" path="res://Scenes/spike.tscn" id="9_keyqw"]
+[ext_resource type="PackedScene" uid="uid://ujs8i0jfv03k" path="res://Scenes/trigger_cam.tscn" id="10_gsxik"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="11_slbhm"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_i5g5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3asqb"]
 texture = ExtResource("8_keyqw")
@@ -474,6 +477,12 @@ texture = ExtResource("9_gsxik")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i5g5g")
 
+[sub_resource type="Resource" id="Resource_3osng"]
+script = ExtResource("12_i5g5g")
+duration = 0.5
+transition = 1
+ease = 1
+
 [node name="Level4" type="Node2D"]
 
 [node name="WinArea" parent="." instance=ExtResource("3_keyqw")]
@@ -485,10 +494,8 @@ position = Vector2(24, 112)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_slbhm")]
 physics_interpolation_mode = 1
-position = Vector2(24, 112)
+position = Vector2(24, 62)
 limit_smoothed = false
-drag_horizontal_enabled = false
-drag_vertical_enabled = false
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_i5g5g")]
 
@@ -557,3 +564,19 @@ tile_set = SubResource("TileSet_3osng")
 
 [node name="Player" parent="." instance=ExtResource("5_3asqb")]
 position = Vector2(24, 112)
+
+[node name="TriggerCam" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("10_gsxik")]
+position = Vector2(224, 296.00003)
+scale = Vector2(10, 20)
+zone_camera = NodePath("../PCam_Secreto")
+
+[node name="PCam_Secreto" type="Node2D" parent="."]
+position = Vector2(208, 336)
+script = ExtResource("11_slbhm")
+snap_to_pixel = true
+tween_resource = SubResource("Resource_3osng")
+follow_offset = Vector2(0, 175)
+dead_zone_width = 1.0
+dead_zone_height = 1.0
+draw_limits = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"

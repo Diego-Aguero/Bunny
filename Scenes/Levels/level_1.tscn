@@ -489,11 +489,13 @@ tile_set = SubResource("TileSet_hwvp3")
 position = Vector2(32, 208)
 
 [node name="Checkpoint" parent="." instance=ExtResource("20_fayjm")]
-position = Vector2(16, 496)
+position = Vector2(32, 504)
 
 [node name="Player" parent="." instance=ExtResource("3_5ggy3")]
-position = Vector2(16, 495)
+position = Vector2(32, 504)
 
 [node name="Camera2D" parent="." instance=ExtResource("21_nojx8")]
+physics_interpolation_mode = 1
+position = Vector2(32, 454)
 
 [node name="InOutTransition" parent="." instance=ExtResource("21_vvknj")]

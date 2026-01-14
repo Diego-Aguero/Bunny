@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_ev1no"]
 
 [node name="Camera2D" type="Camera2D" groups=["MainCamera"]]
+top_level = true
 limit_smoothed = true
 position_smoothing_speed = 20.0
 drag_left_margin = 0.0
