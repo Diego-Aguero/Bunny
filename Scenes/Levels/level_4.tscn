@@ -494,7 +494,7 @@ position = Vector2(24, 112)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_slbhm")]
 physics_interpolation_mode = 1
-position = Vector2(24, 62)
+position = Vector2(24, 112)
 limit_smoothed = false
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_i5g5g")]
@@ -566,7 +566,7 @@ tile_set = SubResource("TileSet_3osng")
 position = Vector2(24, 112)
 
 [node name="TriggerCam" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("10_gsxik")]
-position = Vector2(224, 296.00003)
+position = Vector2(223.99998, 320)
 scale = Vector2(10, 20)
 zone_camera = NodePath("../PCam_Secreto")
 

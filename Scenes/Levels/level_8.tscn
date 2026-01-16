@@ -139,6 +139,8 @@ siguiente_nivel = "9"
 position = Vector2(800, 368)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_6qxou")]
+physics_interpolation_mode = 1
+position = Vector2(800, 368)
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_kuytm")]
 

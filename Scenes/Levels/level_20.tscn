@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cjyykmvofjmw"]
+[gd_scene load_steps=16 format=4 uid="uid://cjyykmvofjmw"]
 
 [ext_resource type="Texture2D" uid="uid://cr6iy6xckbe0e" path="res://Assets/Tilemap/TilesetWorld2.png" id="1_le2pw"]
 [ext_resource type="PackedScene" uid="uid://cjdtvk7qwf828" path="res://Scenes/win_area.tscn" id="3_kd37a"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bhk4ttefj644j" path="res://Scenes/fan.tscn" id="10_vqi0p"]
 [ext_resource type="PackedScene" uid="uid://77jqmxi24spo" path="res://Scenes/spring.tscn" id="11_le2pw"]
 [ext_resource type="PackedScene" uid="uid://f7n84s8ib2va" path="res://Scenes/crusher.tscn" id="11_p0xib"]
+[ext_resource type="PackedScene" uid="uid://ujs8i0jfv03k" path="res://Scenes/trigger_cam.tscn" id="12_7xwes"]
+[ext_resource type="PackedScene" uid="uid://ffd72v0drgdk" path="res://Scenes/p_cam_secreto.tscn" id="13_dd13t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0xib"]
 texture = ExtResource("1_le2pw")
@@ -110,13 +112,11 @@ position = Vector2(1024, 304)
 siguiente_nivel = "21"
 
 [node name="Checkpoint" parent="." instance=ExtResource("4_vqi0p")]
-position = Vector2(176, 192)
-
-[node name="Player" parent="." instance=ExtResource("5_le2pw")]
-position = Vector2(176, 192)
-player_direction = Vector2(-1, 0)
+position = Vector2(192, 176)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_p0xib")]
+physics_interpolation_mode = 1
+position = Vector2(192, 176)
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_7xwes")]
 
@@ -425,10 +425,6 @@ rendering_quadrant_size = 32
 physics_quadrant_size = 32
 metadata/_edit_lock_ = true
 
-[node name="Spike70" parent="." instance=ExtResource("8_kd37a")]
-position = Vector2(848, 80)
-rotation = 3.1415927
-
 [node name="Spike71" parent="." instance=ExtResource("8_kd37a")]
 position = Vector2(592, 176)
 rotation = 3.14159
@@ -444,3 +440,55 @@ rotation = 3.14159
 [node name="Spike74" parent="." instance=ExtResource("8_kd37a")]
 position = Vector2(80, 112)
 rotation = 1.5707964
+
+[node name="TriggerCam" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("12_7xwes")]
+position = Vector2(-144, 288)
+scale = Vector2(13, 20)
+zone_camera = NodePath("../PCam_Secreto")
+
+[node name="PCam_Secreto" parent="." instance=ExtResource("13_dd13t")]
+position = Vector2(0, 304)
+
+[node name="Spike75" parent="." instance=ExtResource("8_kd37a")]
+position = Vector2(304, 240)
+rotation = 3.14159
+
+[node name="Spike76" parent="." instance=ExtResource("8_kd37a")]
+position = Vector2(272, 240)
+rotation = 3.14159
+
+[node name="Spike77" parent="." instance=ExtResource("8_kd37a")]
+position = Vector2(336, 240)
+rotation = 3.14159
+
+[node name="Spike78" parent="." instance=ExtResource("8_kd37a")]
+position = Vector2(368, 240)
+rotation = 3.14159
+
+[node name="Spike79" parent="." instance=ExtResource("8_kd37a")]
+position = Vector2(400, 240)
+rotation = 3.14159
+
+[node name="Spike80" parent="." instance=ExtResource("8_kd37a")]
+position = Vector2(416, 240)
+rotation = 3.14159
+
+[node name="TriggerCam2" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("12_7xwes")]
+position = Vector2(548, 370.00003)
+scale = Vector2(9, 5)
+zone_camera = NodePath("../PCam_Secreto2")
+
+[node name="PCam_Secreto2" parent="." instance=ExtResource("13_dd13t")]
+position = Vector2(704, 320)
+
+[node name="TriggerCam3" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("12_7xwes")]
+position = Vector2(688.00006, 304.00003)
+scale = Vector2(5, 15)
+zone_camera = NodePath("../PCam_Secreto3")
+
+[node name="PCam_Secreto3" parent="." instance=ExtResource("13_dd13t")]
+position = Vector2(816, 256)
+
+[node name="Player" parent="." instance=ExtResource("5_le2pw")]
+position = Vector2(192, 176)
+player_direction = Vector2(-1, 0)

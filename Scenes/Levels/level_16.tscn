@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://drhxbkfyfo1wm"]
+[gd_scene load_steps=15 format=4 uid="uid://drhxbkfyfo1wm"]
 
 [ext_resource type="Texture2D" uid="uid://cr6iy6xckbe0e" path="res://Assets/Tilemap/TilesetWorld2.png" id="1_f7boj"]
 [ext_resource type="PackedScene" uid="uid://cjdtvk7qwf828" path="res://Scenes/win_area.tscn" id="3_cgl0a"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://ctuwkd7cn7wir" path="res://Scenes/in_out_transition.tscn" id="7_bhjjb"]
 [ext_resource type="PackedScene" uid="uid://bsc0bliiin744" path="res://Scenes/circular_saw.tscn" id="9_dumvq"]
 [ext_resource type="PackedScene" uid="uid://dnq3kgrucpthw" path="res://Scenes/canon.tscn" id="11_4dral"]
+[ext_resource type="PackedScene" uid="uid://ffd72v0drgdk" path="res://Scenes/p_cam_secreto.tscn" id="11_dumvq"]
+[ext_resource type="PackedScene" uid="uid://ujs8i0jfv03k" path="res://Scenes/trigger_cam.tscn" id="12_bhjjb"]
 [ext_resource type="PackedScene" uid="uid://bm4pahtbsycrp" path="res://Scenes/spike.tscn" id="12_leaj6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a5g8x"]
@@ -128,6 +130,8 @@ end_pos = Vector2(736, 304)
 movement_duration = 2.0
 
 [node name="Camera2D" parent="." instance=ExtResource("6_dumvq")]
+physics_interpolation_mode = 1
+position = Vector2(800, 432)
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_bhjjb")]
 
@@ -272,6 +276,7 @@ position = Vector2(528, 272)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("4_f7boj")]
 position = Vector2(176, 464)
+scale = Vector2(7, 3)
 checkpoint_id = 1
 
 [node name="Spike55" parent="." instance=ExtResource("12_leaj6")]
@@ -279,3 +284,11 @@ position = Vector2(112, 272)
 
 [node name="Spike56" parent="." instance=ExtResource("12_leaj6")]
 position = Vector2(80, 272)
+
+[node name="TriggerCam" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("12_bhjjb")]
+position = Vector2(240, 464)
+scale = Vector2(15, 10)
+zone_camera = NodePath("../PCam_Secreto")
+
+[node name="PCam_Secreto" parent="." instance=ExtResource("11_dumvq")]
+position = Vector2(240, 528)

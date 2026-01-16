@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://1f71nxdfj3oc"]
+[gd_scene load_steps=18 format=4 uid="uid://1f71nxdfj3oc"]
 
 [ext_resource type="PackedScene" uid="uid://cjdtvk7qwf828" path="res://Scenes/win_area.tscn" id="3_tsywm"]
 [ext_resource type="PackedScene" uid="uid://dfdvlqbo4s7tp" path="res://Scenes/checkpoint.tscn" id="4_18hcu"]
@@ -11,8 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://bhk4ttefj644j" path="res://Scenes/fan.tscn" id="11_5nk8a"]
 [ext_resource type="PackedScene" uid="uid://bm4pahtbsycrp" path="res://Scenes/spike.tscn" id="12_c2hdk"]
 [ext_resource type="PackedScene" uid="uid://dnq3kgrucpthw" path="res://Scenes/canon.tscn" id="13_uk5f4"]
+[ext_resource type="PackedScene" uid="uid://ujs8i0jfv03k" path="res://Scenes/trigger_cam.tscn" id="14_5nk8a"]
 [ext_resource type="Texture2D" uid="uid://cr6iy6xckbe0e" path="res://Assets/Tilemap/TilesetWorld2.png" id="14_81mv6"]
 [ext_resource type="PackedScene" uid="uid://dltsxs3y2n4w1" path="res://Scenes/time_spikes.tscn" id="14_bm7ey"]
+[ext_resource type="PackedScene" uid="uid://ffd72v0drgdk" path="res://Scenes/p_cam_secreto.tscn" id="15_c2hdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5nk8a"]
 texture = ExtResource("14_81mv6")
@@ -118,6 +120,8 @@ position = Vector2(24, 504)
 position = Vector2(24, 504)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_1osxt")]
+physics_interpolation_mode = 1
+position = Vector2(24, 504)
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_mfoun")]
 
@@ -275,3 +279,19 @@ tile_set = SubResource("TileSet_c2hdk")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32
 metadata/_edit_lock_ = true
+
+[node name="TriggerCam" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("14_5nk8a")]
+position = Vector2(111.99999, 224)
+scale = Vector2(20, 12)
+zone_camera = NodePath("../PCam_Secreto")
+
+[node name="PCam_Secreto" parent="." instance=ExtResource("15_c2hdk")]
+position = Vector2(176, 176)
+
+[node name="TriggerCam2" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("14_5nk8a")]
+position = Vector2(272, -46)
+scale = Vector2(20, 15)
+zone_camera = NodePath("../PCam_Secreto2")
+
+[node name="PCam_Secreto2" parent="." instance=ExtResource("15_c2hdk")]
+position = Vector2(480, 32)

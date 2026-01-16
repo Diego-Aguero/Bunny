@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bww0hnug78r0b"]
+[gd_scene load_steps=17 format=4 uid="uid://bww0hnug78r0b"]
 
 [ext_resource type="PackedScene" uid="uid://cjdtvk7qwf828" path="res://Scenes/win_area.tscn" id="3_djsco"]
 [ext_resource type="PackedScene" uid="uid://dfdvlqbo4s7tp" path="res://Scenes/checkpoint.tscn" id="4_ctkoa"]
@@ -10,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://vlx25exmr5n3" path="res://Scenes/intermitent_platform.tscn" id="10_rc13k"]
 [ext_resource type="PackedScene" uid="uid://bm4pahtbsycrp" path="res://Scenes/spike.tscn" id="11_44rer"]
 [ext_resource type="PackedScene" uid="uid://bhk4ttefj644j" path="res://Scenes/fan.tscn" id="12_fqa2j"]
+[ext_resource type="PackedScene" uid="uid://ujs8i0jfv03k" path="res://Scenes/trigger_cam.tscn" id="13_44rer"]
 [ext_resource type="PackedScene" uid="uid://dltsxs3y2n4w1" path="res://Scenes/time_spikes.tscn" id="13_rc13k"]
 [ext_resource type="Texture2D" uid="uid://cr6iy6xckbe0e" path="res://Assets/Tilemap/TilesetWorld2.png" id="14_44rer"]
+[ext_resource type="PackedScene" uid="uid://ffd72v0drgdk" path="res://Scenes/p_cam_secreto.tscn" id="14_fqa2j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fqa2j"]
 texture = ExtResource("14_44rer")
@@ -118,6 +120,8 @@ position = Vector2(272, 496)
 player_direction = Vector2(-1, -1)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_tngp8")]
+physics_interpolation_mode = 1
+position = Vector2(272, 496)
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_rc13k")]
 
@@ -240,3 +244,11 @@ tile_set = SubResource("TileSet_bnejg")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32
 metadata/_edit_lock_ = true
+
+[node name="TriggerCam" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("13_44rer")]
+position = Vector2(64, 480)
+scale = Vector2(13, 10)
+zone_camera = NodePath("../PCam_Secreto")
+
+[node name="PCam_Secreto" parent="." instance=ExtResource("14_fqa2j")]
+position = Vector2(64, 368)

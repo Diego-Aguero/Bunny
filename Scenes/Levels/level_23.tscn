@@ -114,6 +114,8 @@ position = Vector2(0, 496)
 position = Vector2(0, 496)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_1nl86")]
+physics_interpolation_mode = 1
+position = Vector2(0, 496)
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_6fgxv")]
 

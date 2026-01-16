@@ -479,8 +479,8 @@ sources/0 = SubResource("TileSetAtlasSource_20kd1")
 
 [sub_resource type="Resource" id="Resource_evokg"]
 script = ExtResource("12_gqyih")
-duration = 0.5
-transition = 1
+duration = 0.3
+transition = 7
 ease = 1
 
 [node name="Level5" type="Node2D"]
@@ -509,7 +509,7 @@ player_direction = Vector2(-1, 0)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_3koi7")]
 physics_interpolation_mode = 1
-position = Vector2(752, -32)
+position = Vector2(752, 18)
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_20kd1")]
 
