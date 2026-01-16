@@ -779,13 +779,13 @@ position = Vector2(2128, -48)
 fall_speed = 300.0
 rise_speed = 100.0
 fall_distance = 480.0
-anticipation_time = 0.0
-shake_intensity = 0.0
-shake_speed = 0.0
+anticipation_time = 0.001
+shake_intensity = 0.001
+shake_speed = 0.001
 left_area_size = Vector2(32, 512)
 right_area_size = Vector2(32, 512)
-left_area_offset = Vector2(12, 240)
-right_area_offset = Vector2(-12, 240)
+left_area_offset = Vector2(32, 272)
+right_area_offset = Vector2(-32, 272.055)
 
 [node name="Spike205" parent="." instance=ExtResource("3_38ig8")]
 position = Vector2(1872, 496)

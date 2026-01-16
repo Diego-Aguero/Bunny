@@ -329,9 +329,17 @@ position = Vector2(560, 368)
 rotation = 3.1415927
 
 [node name="TriggerCam" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("13_niorw")]
-position = Vector2(1104.0001, 256)
-scale = Vector2(15, 12)
+position = Vector2(1088.0001, 268)
+scale = Vector2(15, 10)
 zone_camera = NodePath("../PCam_Secreto")
 
 [node name="PCam_Secreto" parent="." instance=ExtResource("14_qak7p")]
 position = Vector2(1104, 240)
+
+[node name="TriggerCam2" parent="." node_paths=PackedStringArray("zone_camera") instance=ExtResource("13_niorw")]
+position = Vector2(1088.0001, 468)
+scale = Vector2(15, 10)
+zone_camera = NodePath("../PCam_Secreto2")
+
+[node name="PCam_Secreto2" parent="." instance=ExtResource("14_qak7p")]
+position = Vector2(1104, 400)
