@@ -44,7 +44,7 @@ func _process(delta):
 		elapsed_time += delta
 	
 	# Convertimos a minutos y segundos
-	var minutes = int(elapsed_time) / 60
+	var minutes = int(elapsed_time / 60)
 	var seconds = int(elapsed_time) % 60
 
 	
