@@ -14,7 +14,7 @@ anchor_bottom = 0.085
 offset_left = 7.84
 offset_right = 7.99998
 offset_bottom = 0.0499992
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 10
 text = "FPS: "
 
 [node name="DeathsLabel" type="Label" parent="."]
@@ -25,7 +25,7 @@ anchor_bottom = 0.085
 offset_left = 7.99998
 offset_right = 8.0
 offset_bottom = 0.0499992
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 10
 text = "Deaths:"
 
 [node name="TimeLabel" type="Label" parent="."]
@@ -36,7 +36,7 @@ anchor_bottom = 0.089
 offset_left = 8.0
 offset_right = 8.16
 offset_bottom = -1.03
-theme_override_font_sizes/font_size = 6
+theme_override_font_sizes/font_size = 10
 text = "Time: "
 
 [node name="Timer" type="Timer" parent="."]

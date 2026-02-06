@@ -558,4 +558,4 @@ position = Vector2(816, 528)
 position = Vector2(912, 528)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("4_1jlnc")]
-position = Vector2(584, 504)
+position = Vector2(600, 488)

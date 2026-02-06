@@ -17,8 +17,7 @@ func reset_stats():
 	death_count = 0
 	elapsed_time = 0.0
 
-# Variable estática para que persista entre escenas
-static var last_checkpoint_position: Vector2 = Vector2.ZERO
+var last_checkpoint_position: Vector2 = Vector2.ZERO
 
 func reset_scene() -> void:
 	is_dead = false 

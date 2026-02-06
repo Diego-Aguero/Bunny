@@ -8,7 +8,7 @@
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eids2"]
-size = Vector2(205.75, 32)
+size = Vector2(173.75, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_54c37"]
 animations = [{
@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_bp8gv")
 [node name="PushArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
-position = Vector2(105.125, 0)
+position = Vector2(89.125, 0)
 shape = SubResource("RectangleShape2D_eids2")
 debug_color = Color(0.615686, 0.537255, 0, 0.419608)
 

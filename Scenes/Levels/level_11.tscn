@@ -139,7 +139,7 @@ position = Vector2(-48, 560)
 position = Vector2(-16, 560)
 
 [node name="CircularSaw" parent="." instance=ExtResource("9_6b28d")]
-position = Vector2(-48, 464)
+position = Vector2(-48, 432)
 end_pos = Vector2(-48, 560)
 movement_duration = 1.0
 
