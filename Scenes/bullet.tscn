@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2g15fmpcufsm" path="res://Assets/Tiles/Transparent/tile_0001.png" id="1_xjght"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oduel"]
-radius = 2.0
+radius = 4.0
 
 [node name="Bullet" type="Area2D" groups=["Hazard"]]
 collision_layer = 7
@@ -12,6 +12,8 @@ collision_mask = 7
 script = ExtResource("1_oduel")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(2, 2)
 texture = ExtResource("1_xjght")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -72,7 +72,7 @@ func _shoot_bullet() -> void:
 	if bullet_scene:
 		var bullet = bullet_scene.instantiate()
 		# Ubica la bala en la posición del cañón, con un pequeño offset en la dirección del disparo
-		bullet.position = global_position + push_direction * 10
+		bullet.position = global_position + push_direction * 25
 		# Asigna la velocidad: primero verifica si existe el método "set_velocity"
 		if bullet.has_method("set_velocity"):
 			bullet.set_velocity(push_direction * bullet_speed)

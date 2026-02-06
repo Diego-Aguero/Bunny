@@ -38,7 +38,7 @@ func _ready() -> void:
 	if not GameManager.is_level_complete and GameManager.last_checkpoint_position != Vector2.ZERO:
 		global_position = GameManager.last_checkpoint_position
 	
-	$CollisionShape2D.set_deferred("disabled", false)
+	$CollisionPolygon2D.set_deferred("disabled", false)
 	$HurtBoxPlayer/CollisionShape2D.set_deferred("disabled", false)
 	$GrabArea/CollisionShape2D.set_deferred("disabled", false)
 	$StartingTime.start()
@@ -221,7 +221,7 @@ func death_ctrl():
 	GameManager.is_dead = true
 	GameManager.add_death()
 	
-	$CollisionShape2D.set_deferred("disabled", true)
+	$CollisionPolygon2D.set_deferred("disabled", true)
 	$HurtBoxPlayer/CollisionShape2D.set_deferred("disabled", true)
 	$GrabArea/CollisionShape2D.set_deferred("disabled", true)
 	
