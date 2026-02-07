@@ -82,7 +82,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7vwh"]
-size = Vector2(12.5, 29.5)
+size = Vector2(12.5, 27.500002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(18.875, 4)
@@ -199,17 +199,17 @@ sprite_frames = SubResource("SpriteFrames_3smsa")
 animation = &"Fall"
 autoplay = "Fall"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." groups=["Player"]]
 position = Vector2(-1.8267074, -14.121753)
 scale = Vector2(0.98796135, 1.1560025)
-polygon = PackedVector2Array(-9.28519, -10.275236, -0.1755625, -18.06072, 8.934146, -10.275305, 9.000046, 9.999958, -8.999954, 10.000038)
+polygon = PackedVector2Array(-9.28519, -10.275236, -0.1755625, -18.06072, 8.934146, -10.275305, 8.934251, 9.620848, -9.285086, 9.620916)
 disabled = true
 
 [node name="HurtBoxPlayer" type="Area2D" parent="." groups=["HurtBoxPlayer"]]
 position = Vector2(-2.0000803, -17.999992)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxPlayer"]
-position = Vector2(0, -0.25)
+position = Vector2(0, 1.9073486e-06)
 shape = SubResource("RectangleShape2D_m7vwh")
 disabled = true
 debug_color = Color(0.738089, 0.72835, 0, 0.419608)

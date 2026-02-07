@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bww0hnug78r0b"]
+[gd_scene load_steps=21 format=4 uid="uid://bww0hnug78r0b"]
 
 [ext_resource type="Texture2D" uid="uid://0crrtgvpnul8" path="res://Assets/Tiles/Default/tile_0000.png" id="1_xbecd"]
 [ext_resource type="Texture2D" uid="uid://bqrks21skmx02" path="res://Assets/Tilemap/monochrome_tilemap_packed.png" id="2_604da"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bm4pahtbsycrp" path="res://Scenes/spike.tscn" id="11_44rer"]
 [ext_resource type="PackedScene" uid="uid://bhk4ttefj644j" path="res://Scenes/fan.tscn" id="12_fqa2j"]
 [ext_resource type="PackedScene" uid="uid://dltsxs3y2n4w1" path="res://Scenes/time_spikes.tscn" id="13_rc13k"]
+[ext_resource type="Texture2D" uid="uid://cr6iy6xckbe0e" path="res://Assets/Tilemap/TilesetWorld2.png" id="14_44rer"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5f3p6"]
 texture = ExtResource("1_xbecd")
@@ -515,9 +516,101 @@ texture = ExtResource("2_604da")
 19:19/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jv26f"]
+tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/4 = SubResource("TileSetAtlasSource_jv26f")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fqa2j"]
+texture = ExtResource("14_44rer")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:0/0 = 0
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:0/0 = 0
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+11:0/0 = 0
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+7:3/0 = 0
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+10:3/0 = 0
+11:3/0 = 0
+11:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_bnejg"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0, 1, 0, 1)
+sources/0 = SubResource("TileSetAtlasSource_fqa2j")
 
 [node name="Level18" type="Node2D"]
 
@@ -531,17 +624,17 @@ position = Vector2(88, 8)
 siguiente_nivel = "19"
 
 [node name="Checkpoint" parent="." instance=ExtResource("4_ctkoa")]
-position = Vector2(128, 248)
+position = Vector2(272, 496)
 
 [node name="Player" parent="." instance=ExtResource("5_hm3kr")]
-position = Vector2(128, 248)
+position = Vector2(272, 496)
 
 [node name="Camera2D" parent="." instance=ExtResource("6_tngp8")]
 
 [node name="InOutTransition" parent="." instance=ExtResource("7_rc13k")]
 
 [node name="Crusher" parent="." instance=ExtResource("8_604da")]
-position = Vector2(40, 168)
+position = Vector2(48, 304)
 rise_speed = 30.0
 fall_distance = 80.0
 left_area_size = Vector2(16, 120)
@@ -550,7 +643,7 @@ left_area_offset = Vector2(12, 20)
 right_area_offset = Vector2(-12, 20)
 
 [node name="Crusher2" parent="." instance=ExtResource("8_604da")]
-position = Vector2(264, 88)
+position = Vector2(528, 144)
 fall_speed = 100.0
 rise_speed = 30.0
 fall_distance = 64.0
@@ -560,75 +653,75 @@ left_area_offset = Vector2(12, 16)
 right_area_offset = Vector2(-12, 16)
 
 [node name="Spring2" parent="." instance=ExtResource("9_tngp8")]
-position = Vector2(72, 136)
+position = Vector2(144, 272)
 
 [node name="IntermitentPlatform3" parent="." instance=ExtResource("10_rc13k")]
 modulate = Color(0, 0, 1, 1)
-position = Vector2(216, 72)
+position = Vector2(336, 144)
 CurrentState = false
 CicleTime = 0.9
 
 [node name="IntermitentPlatform4" parent="." instance=ExtResource("10_rc13k")]
 modulate = Color(0, 0, 1, 1)
-position = Vector2(216, 56)
+position = Vector2(336, 112)
 CurrentState = false
 CicleTime = 0.9
 
 [node name="IntermitentPlatform5" parent="." instance=ExtResource("10_rc13k")]
 modulate = Color(0, 0, 1, 1)
-position = Vector2(216, 40)
+position = Vector2(336, 80)
 CurrentState = false
 CicleTime = 0.9
 
 [node name="IntermitentPlatform2" parent="." instance=ExtResource("10_rc13k")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(168, 56)
+position = Vector2(272, 96)
 CicleTime = 0.9
 
 [node name="IntermitentPlatform6" parent="." instance=ExtResource("10_rc13k")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(168, 40)
+position = Vector2(272, 64)
 CicleTime = 0.9
 
 [node name="IntermitentPlatform7" parent="." instance=ExtResource("10_rc13k")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(168, 24)
+position = Vector2(272, 32)
 CicleTime = 0.9
 
 [node name="IntermitentPlatform8" parent="." instance=ExtResource("10_rc13k")]
 modulate = Color(0, 0, 1, 1)
-position = Vector2(152, 56)
+position = Vector2(256, 144)
 CurrentState = false
 CicleTime = 0.9
 
 [node name="IntermitentPlatform9" parent="." instance=ExtResource("10_rc13k")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(120, 40)
+position = Vector2(224, 80)
 CicleTime = 0.9
 
 [node name="Spike26" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(232, 248)
+position = Vector2(464, 496)
 
 [node name="Spike31" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(248, 248)
+position = Vector2(496, 496)
 
 [node name="Spike32" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(264, 248)
+position = Vector2(528, 496)
 
 [node name="Spike33" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(280, 248)
+position = Vector2(560, 496)
 
 [node name="Spike34" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(216, 248)
+position = Vector2(400, 496)
 
 [node name="Spike35" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(296, 248)
+position = Vector2(592, 496)
 
 [node name="Spike36" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(312, 248)
+position = Vector2(624, 496)
 
 [node name="Spike37" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(8, 248)
+position = Vector2(336, 496)
 
 [node name="Fan5" parent="." instance=ExtResource("12_fqa2j")]
 position = Vector2(56, 104)
@@ -636,12 +729,12 @@ direction_option = 3
 push_force = 1000.0
 
 [node name="TimeSpike" parent="." instance=ExtResource("13_rc13k")]
-position = Vector2(184, 72)
+position = Vector2(368, 144)
 CicleTime = 0.7
 CurrentState = false
 
 [node name="TimeSpike2" parent="." instance=ExtResource("13_rc13k")]
-position = Vector2(200, 72)
+position = Vector2(400, 144)
 CicleTime = 0.7
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -650,10 +743,17 @@ tile_set = SubResource("TileSet_jv26f")
 metadata/_edit_lock_ = true
 
 [node name="Spike27" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(184, 248)
+position = Vector2(432, 496)
 
 [node name="Spike38" parent="." instance=ExtResource("11_44rer")]
-position = Vector2(200, 248)
+position = Vector2(368, 496)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("4_ctkoa")]
-position = Vector2(200, 152)
+position = Vector2(400, 304)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAFAAEAAAAAAAMAAAAEAAkAAAADAAMAAAADAAkAAAABAAMAAAAMAAoAAAAAAAMAAAAPAAoAAAABAAMAAAAQAAoAAAACAAMAAAARAAoAAAADAAMAAAALAAQAAAABAAMAAAAMAAQAAAADAAMAAAD//w8AAAALAAIAAAD//w4AAAALAAIAAAD//w0AAAALAAIAAAD//wwAAAALAAIAAAD//wsAAAALAAIAAAD//woAAAALAAIAAAD//wkAAAALAAIAAAD//wgAAAALAAIAAAD//wcAAAALAAIAAAD//wYAAAALAAIAAAD//wUAAAALAAIAAAD//wQAAAALAAIAAAD//wMAAAALAAIAAAD//wIAAAALAAIAAAD//wEAAAALAAIAAAD//wAAAAALAAIAAAD/////AAALAAIAAAAUAA8AAAAIAAEAAAAUAA4AAAAIAAEAAAAUAA0AAAAIAAEAAAAUAAwAAAAIAAEAAAAUAAsAAAAIAAEAAAAUAAoAAAAIAAEAAAAUAAkAAAAIAAEAAAAUAAgAAAAIAAEAAAAUAAcAAAAIAAEAAAAUAAYAAAAIAAEAAAAUAAUAAAAIAAEAAAAUAAQAAAAIAAEAAAAUAAMAAAAIAAEAAAAUAAIAAAAIAAEAAAAUAAEAAAAIAAEAAAAUAAAAAAAIAAEAAAAUAP//AAAIAAEAAAAAAP7/AAAJAAMAAAABAP7/AAAJAAMAAAACAP7/AAAJAAMAAAADAP7/AAAJAAMAAAAEAP7/AAAJAAMAAAAFAP7/AAAJAAMAAAAGAP7/AAAJAAMAAAAHAP7/AAAJAAMAAAAIAP7/AAAJAAMAAAAJAP7/AAAJAAMAAAAKAP7/AAAJAAMAAAALAP7/AAAJAAMAAAAMAP7/AAAJAAMAAAANAP7/AAAJAAMAAAAOAP7/AAAJAAMAAAAPAP7/AAAJAAMAAAAQAP7/AAAJAAMAAAARAP7/AAAJAAMAAAASAP7/AAAJAAMAAAATAP7/AAAJAAMAAAAAABAAAAAKAAAAAAABABAAAAAKAAAAAAACABAAAAAKAAAAAAADABAAAAAKAAAAAAAEABAAAAAKAAAAAAAFABAAAAAKAAAAAAAGABAAAAAKAAAAAAAHABAAAAAKAAAAAAAIABAAAAAKAAAAAAAJABAAAAAKAAAAAAAKABAAAAAKAAAAAAALABAAAAAKAAAAAAAMABAAAAAKAAAAAAANABAAAAAKAAAAAAAOABAAAAAKAAAAAAAPABAAAAAKAAAAAAAQABAAAAAKAAAAAAARABAAAAAKAAAAAAASABAAAAAKAAAAAAATABAAAAAKAAAAAAAUABAAAAAFAAEAAAD//xAAAAAGAAEAAAD///7/AAAGAAIAAAAUAP7/AAAFAAIAAAA=")
+tile_set = SubResource("TileSet_bnejg")
+rendering_quadrant_size = 32
+physics_quadrant_size = 32
+metadata/_edit_lock_ = true

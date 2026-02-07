@@ -124,7 +124,7 @@ position = Vector2(16, 496)
 [node name="InOutTransition" parent="." instance=ExtResource("7_aokn0")]
 
 [node name="Canon" parent="." instance=ExtResource("8_1rs5u")]
-position = Vector2(528, 528)
+position = Vector2(528, 512)
 direction_option = 2
 charging_time = 0.3
 cooldown_time = 0.3
