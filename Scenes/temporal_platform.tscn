@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0xrt34dyidov" path="res://Assets/Tiles/Transparent/tile_0029.png" id="4_x6s5r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6s5r"]
-size = Vector2(14, 14)
+size = Vector2(32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o2yvn"]
 animations = [{
@@ -34,10 +34,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_juxky"]
-size = Vector2(22.8571, 2.85715)
+size = Vector2(45.714287, 7.1428704)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5qpk"]
-size = Vector2(12.5, 12.5)
+size = Vector2(24, 24)
 
 [node name="TemporalPlatform" type="StaticBody2D"]
 collision_layer = 4
@@ -47,6 +47,8 @@ script = ExtResource("1_l5qpk")
 shape = SubResource("RectangleShape2D_x6s5r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.7683716e-07, -4.7683716e-07)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_o2yvn")
 animation = &"Active"
 autoplay = "Idle"
@@ -58,7 +60,8 @@ scale = Vector2(0.7, 0.7)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-9.79219e-07, -10)
+position = Vector2(3.4059763e-06, -23.57142)
+scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_juxky")
 debug_color = Color(0.615513, 0.536563, 0, 0.42)
 

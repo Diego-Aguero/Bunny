@@ -25,13 +25,35 @@ size = Vector2(88, 28)
 collision_layer = 4
 collision_mask = 6
 script = ExtResource("1_7q8l8")
+anticipation_time = 0.7
+shake_intensity = 7.0
 left_area_size = Vector2(32, 96)
 right_area_size = Vector2(32, 96)
-left_area_offset = Vector2(-64, 32)
-right_area_offset = Vector2(64, 32)
+left_area_offset = Vector2(-32, 32)
+right_area_offset = Vector2(32, 32)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Visuals"]
+position = Vector2(6.1035156e-05, 32.03723)
+rotation = 3.14159
+scale = Vector2(1.9999927, 1.9958104)
+texture = ExtResource("2_q14rs")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Visuals"]
+position = Vector2(-31.995424, 32.037323)
+rotation = 3.14159
+scale = Vector2(1.9994433, 1.9958106)
+texture = ExtResource("2_q14rs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+position = Vector2(32.06101, 32.0372)
+rotation = 3.14159
+scale = Vector2(2.0076263, 1.9958103)
+texture = ExtResource("2_q14rs")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Visuals"]
 position = Vector2(3.8146973e-06, -16)
 scale = Vector2(1.9999999, 1.9999999)
 texture = ExtResource("1_um715")
@@ -40,11 +62,6 @@ metadata/_edit_group_ = true
 [node name="Area2D" type="Area2D" parent="." groups=["Hazard"]]
 position = Vector2(32, 31.999996)
 rotation = 3.14159
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-0.061006546, -0.03720641)
-scale = Vector2(2.0076263, 1.9958103)
-texture = ExtResource("2_q14rs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(7.9999743, 11.000021)
@@ -60,11 +77,6 @@ debug_color = Color(0.670588, 0, 0.0156863, 0.419608)
 [node name="Area2D2" type="Area2D" parent="." groups=["Hazard"]]
 position = Vector2(0, 31.999996)
 rotation = 3.14159
-
-[node name="Sprite2D2" type="Sprite2D" parent="Area2D2"]
-position = Vector2(-6.198883e-05, -0.03723955)
-scale = Vector2(1.9999926, 1.9958105)
-texture = ExtResource("2_q14rs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(7.999972, 11.000023)
@@ -82,11 +94,6 @@ debug_color = Color(0.670588, 0, 0.0156863, 0.419608)
 position = Vector2(-32, 31.999996)
 rotation = 3.14159
 
-[node name="Sprite2D3" type="Sprite2D" parent="Area2D3"]
-position = Vector2(-0.0045748986, -0.037325088)
-scale = Vector2(1.9994433, 1.9958106)
-texture = ExtResource("2_q14rs")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(-8.000027, 10.999981)
 rotation = 3.14159
@@ -100,14 +107,14 @@ shape = SubResource("RectangleShape2D_w8m3d")
 debug_color = Color(0.670588, 0, 0.0156863, 0.419608)
 
 [node name="LeftArea" type="Area2D" parent="."]
-position = Vector2(-64, 32)
+position = Vector2(-32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArea"]
 shape = SubResource("RectangleShape2D_7q8l8")
 debug_color = Color(0.615686, 0.537255, 0, 0.419608)
 
 [node name="RightArea" type="Area2D" parent="."]
-position = Vector2(64, 32)
+position = Vector2(32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightArea"]
 shape = SubResource("RectangleShape2D_2dbam")
